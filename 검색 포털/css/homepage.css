@@ -6,7 +6,8 @@
 header h1 {
     display: block;
     position: absolute;
-    left: 20px;
+    top: 30px;
+    left: 50px;
 }
 
 #search-box {
@@ -15,6 +16,6 @@ header h1 {
     height: 24px;
     padding: 10px 0px;
     display: block;
-    margin-top: 40px;
-    margin-left: 200px;
+    margin-top: 60px;
+    margin-left: 250px;
 }

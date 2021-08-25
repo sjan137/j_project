@@ -8,18 +8,12 @@ import time
 
 days_to_search = []
 week = ['일', '월', '화', '수', '목', '금', '토']
-for i in range(3):
+for i in range(5):
     day_after = date.today() + timedelta(days=i+2)
     days_to_search.append(day_after)
 
-def weekNum(day):
-    return getWeekNum.get_week_num(day.year, day.month, day.day)
-
-def weekDay(day):
-    return (day.weekday() + 1) % 7 + 1
-
 today_month = date.today().month
-today_price = []
+today_price = [[date.today().isoformat()]]
 
 chromedriver = "C:/Users/안성진/Downloads/chromedriver_win32/chromedriver.exe"
 with webdriver.Chrome(chromedriver) as driver:
@@ -42,8 +36,8 @@ with webdriver.Chrome(chromedriver) as driver:
     for day in days_to_search:
         if not flag: driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/div[4]/div/div/div[2]/div[2]/button').click()
         else: driver.find_element_by_xpath('//*[@id="__next"]/div/div[1]/div[3]/div/div[1]/div/div/div/div[2]/div[2]/button').click()
-        week_num = weekNum(day)
-        week_day = weekDay(day)
+        week_num = getWeekNum.weekNum(day)
+        week_day = getWeekNum.weekDay(day)
         rel_month = 2 + day.month - datetime.today().month
         # print(rel_month, week_num, week_day)
 
@@ -72,5 +66,6 @@ with webdriver.Chrome(chromedriver) as driver:
     print(today_price)
 
 # 스크랩한 데이터를 ticket.csv 파일에 저장. 일종의 DB
-for dbd_price in today_price:
-    usecsv.writecsv('', dbd_price)
+usecsv.writecsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)
+# 이어서 추가로 저장
+# usecsv.addcsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)

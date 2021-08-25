@@ -22,7 +22,11 @@ def get_week_num(y, m, d):
         origin = firstday - timedelta(days=firstday.weekday() + 1)
     return (target - origin).days // 7 + 1
 
+def weekNum(day):
+    return get_week_num(day.year, day.month, day.day)
 
+def weekDay(day):
+    return (day.weekday() + 1) % 7 + 1
 
 
 

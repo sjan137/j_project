@@ -45,7 +45,7 @@ with webdriver.Chrome(chromedriver) as driver:
             time.sleep(1)
             driver.find_element_by_xpath(f'//*[@id="__next"]/div/div[1]/div[10]/div[2]/div[1]/div[2]/div/div[{rel_month}]/table/tbody/tr[{week_num}]/td[{week_day}]/button/b').click()
         else:
-            time.sleep(30)
+            time.sleep(60)
             driver.find_element_by_xpath(f'//*[@id="__next"]/div/div[2]/div[2]/div[1]/div[2]/div/div[{rel_month}]/table/tbody/tr[{week_num}]/td[{week_day}]/button/b').click()
             
         # 항공권 검색 버튼 클릭
@@ -66,6 +66,6 @@ with webdriver.Chrome(chromedriver) as driver:
     print(today_price)
 
 # 스크랩한 데이터를 ticket.csv 파일에 저장. 일종의 DB
-usecsv.writecsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)
+# usecsv.writecsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)
 # 이어서 추가로 저장
-# usecsv.addcsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)
+usecsv.addcsv('비행기 티켓 금액 스크래핑/tickets.csv', today_price)

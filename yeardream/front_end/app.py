@@ -36,9 +36,9 @@ def living():
   return render_template('living.html', title='생활')
 
 
-@app.route('/matro')
-def matro():
-  return render_template('matro.html', title='교통')
+@app.route('/metro')
+def metro():
+  return render_template('metro.html', title='교통')
 
 
 

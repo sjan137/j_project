@@ -1,0 +1,59 @@
+.contents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+homepage {
+  background: #f3f4f6;
+  grid-area: main;
+  overflow-y: auto;
+  font-family: 'Anton', sans-serif;
+}
+
+main {
+  background: #f3f4f6;
+  grid-area: main;
+  overflow-y: auto;
+}
+
+.main__container {
+  padding: 20px 35px;
+}
+
+.button {
+  /* background-color: #4CAF50; */
+  background-color: gainsboro;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.button:hover {
+  /* padding-right: 25px; */
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@media only screen and (max-width: 855px) {
+  .main__cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .contents {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+
+}

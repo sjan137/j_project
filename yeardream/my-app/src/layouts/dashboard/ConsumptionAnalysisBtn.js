@@ -8,13 +8,19 @@ import BusAnalysis from '../../components/analysis/BusAnalysis';
 function Analysis() {
     const [condition, setCondition] = useState(false);
     const [pageCond, setPageCond] = useState("");
-    const toggle = () => setCondition(!condition);
+    const toggle = () => {
+        if (pageCond === '') {
+            setCondition(false);
+            alert('항목을 선택해주세요.');
+        } else {setCondition(!condition);}
+    }
     useEffect(() => {
         console.log('c', condition);
     }, [condition])
     function showAnalysis(pageCond) {
         switch (pageCond) {
             case '':
+                setCondition(false)
                 return null;
             case '지하철':
                 return <MetroAnalysis />;

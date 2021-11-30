@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardHeader, Box } from '@mui/material';
 import MetroTable from './table/MetroTable';
 
-export default function MetroAnalysis() {
+export default function BusAnalysis() {
     return (
         <Card>
             <CardHeader title="버스 데이터 분석 결과" subheader="버스 데이터와 코로나 사이의 연관성을 분석한 결과입니다." />

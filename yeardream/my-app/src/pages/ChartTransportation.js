@@ -11,6 +11,8 @@ import {
   
 } from '../components/_dashboard/app';
 import AnalysisBtn from '../layouts/dashboard/TransportationAnalysisBtn';
+import TranportationChartBtn from '../layouts/dashboard/TransportationChartBtn';
+import Nav from 'react-bootstrap/Nav';
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
@@ -21,17 +23,15 @@ export default function DashboardApp() {
           <Typography variant="h4" gutterBottom>
             교통
           </Typography>
-          
-          {/* <Button
-            variant="contained"
-            component={RouterLink}
-            to="#"
-            startIcon={<Icon icon={plusFill} />}
-          >
-            분석
-          </Button> */}
-          
         </Stack>
+          <Nav variant="tabs" defaultActiveKey="/home">
+            <Nav.Item>
+              <Nav.Link href="/home">Active</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+            </Nav.Item>
+          </Nav>
         <Grid item xs={12} md={6} lg={8}>
           <AppMetro />
         </Grid>

@@ -8,20 +8,27 @@ import BusAnalysis from '../../components/analysis/BusAnalysis';
 function Analysis() {
     const [condition, setCondition] = useState(false);
     const [pageCond, setPageCond] = useState("");
-    const toggle = () => setCondition(!condition);
+    const toggle = () => {
+        if (pageCond === '') {
+            setCondition(false);
+            alert('항목을 선택해주세요.');
+        } else {setCondition(!condition);}
+    }
     useEffect(() => {
         console.log('c', condition);
     }, [condition])
     function showAnalysis(pageCond) {
         switch (pageCond) {
-            case '': return alert('항목을 선택해주세요.');
+            case '':
+                setCondition(false)
+                return null;
             case '국내 매출액': return <p>국내 매출액</p>;
             case '국내 관객수': return '국내 관객수';
             case '해외 판매액': return '해외 판매액';
             case '해외 관객수': return '해외 관객수';
             case '전체 매출액': return '전체 매출액';
             case '전체 관객수': return '전체 관객수';
-            case '상연 횟수': return <BusAnalysis />;
+            case '상연 횟수': return '상영 횟수';
         }
     }
     const renderCondition = condition

@@ -5,7 +5,6 @@ import getWeekNum
 import usecsv
 import time
 
-
 days_to_search = []
 week = ['일', '월', '화', '수', '목', '금', '토']
 for i in range(5):
